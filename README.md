@@ -17,7 +17,14 @@ https://github.com/opencv/opencv_contrib/archive/3.4.0.zip
 9. Run `make -j4`, where 4 is the number of logical cores in your machine.
 10. Once completed, if successful, run `make install`
 
-# Using OpenCV & CMake
+# Using OpenCV & CMake (Easy)
+
+1. Make a copy of this repository
+2. Add your code to `lab.cpp`
+3. Run `cmake .` to prepare the directory
+4. Run `make` to build the executable. It will be called `lab`
+
+# Using OpenCV & CMake (Custom)
 
 1. Create a directory to contain your code.
 2. Create a file called CMakeLists.txt, and copy the lines below in to it.
