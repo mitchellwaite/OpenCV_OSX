@@ -1,4 +1,4 @@
-# Installing OpenCV
+# Installing OpenCV with the extra modules
 
 1. Install homebrew from brew.sh
 2. Install Xcode and the developer tools
