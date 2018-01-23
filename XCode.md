@@ -41,3 +41,28 @@ You must follow the similar instructions for the release only version.
 3. Type in the following `/usr/local/lib`
 4. Double Click the `Debug` option, then Click the plus icon
 5. Type in the location of the OpenCV debug libraries
+
+# Setting the Build Path (Optional)
+
+XCode automatically stores the executable file in a derived data folder, we want to change it so that the executable is stored in your project directory.
+
+1. Open XCode Preferences
+2. Select Locations Tab
+3. Click Advanced
+4. Change the Location Button from Unique to Legacy
+
+# Copying files to the output directory automatically (Optional)
+
+Full disclosure, I don't know if this is necessarily the correct way to do this. You can always build the project, then manually copy data files to the output directory before starting the debugger. This just makes it easier so you don't need to manually copy things.
+
+1. Add any files you wish to include to the XCode project, by dragging them to the folder in the sidebar containing your main.cpp
+2. On the window that appears, ensure `Copy items if needed` is checked
+3. Press `Finish`
+4. Click the XCode project file in your inspector (which is the blue icon in the furthest left hand tab). You should now have tabs in the centre window, one of them is `Build Phases`
+5. Click `Build Phases`
+6. Scroll down to `Copy Files`, and click the arrow to its left
+7. Under `Destination`, select `Products Directory`
+8. For `Subpath`, you can enter a name of a directory you wish to contain your files. This directory will be placed in the same directory as the executable. Optionally, you may blank this out to have images reside in the same directory as the executable.
+9. Ensure `Copy only when installing` is *not* checked.
+10. Click the plus, and select any items you want to include. Select multiple items with the `Command` or `Windows` key.
+11. Click the `Add` Button

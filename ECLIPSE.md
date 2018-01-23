@@ -39,3 +39,31 @@ You must complete the instructions twice.
 6. In step 4, replace `/usr/local/lib` with the location of the OpenCV debug libraries.
 7. Click `Apply and Close`, then `Finish`
 8. You should now be able to build and run your project! `Release` mode will build and link against the regular OpenCV libraries, while `Debug` mode will link against the Debug OpenCV libraries
+
+
+#Working Directory
+
+By default, Eclipse uses the project directory as the working directory.
+
+In this case, that directory is the project root, containing the src directory and any build directories.
+
+You'll need to place any resource files in that directory to be able to access them using relative paths in your program
+
+# Getting the debugger to work
+
+Eclipse C++ uses GDB as the default debugger. System Integrity Protection, a security feature in 10.12 Sierra and later, breaks it by default.
+
+To install it, run `brew install gdb`. Make sure to follow the instructions below to install and set it up correctly.
+
+If you really need a debugger, and don't want to bother with this crap, use [XCode](../blob/master/XCode.md)
+
+```
+gdb requires special privileges to access Mach ports.
+You will need to codesign the binary. For instructions, see:
+
+  https://sourceware.org/gdb/wiki/BuildingOnDarwin
+
+On 10.12 (Sierra) or later with SIP, you need to run this:
+
+  echo "set startup-with-shell off" >> ~/.gdbinit
+```
