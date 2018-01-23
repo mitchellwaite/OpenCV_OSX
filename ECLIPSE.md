@@ -51,19 +51,12 @@ You'll need to place any resource files in that directory to be able to access t
 
 # Getting the debugger to work
 
-Eclipse C++ uses GDB as the default debugger. System Integrity Protection, a security feature in 10.12 Sierra and later, *breaks it by default*.
+The default supported debugger for eclipse is gdb. However, it is not included on OS X by default, and there are some hoops to jump through to get it to work. You can follow the instructions here:
 
-To install it, run `brew install gdb`. Make sure to follow the instructions below to install and set it up correctly.
+https://www.ics.uci.edu/~pattis/common/handouts/macmingweclipse/allexperimental/mac-gdb-install.html
+
+Alternatively, you can try enabling support for `lldb`, the default debugger on MacOS. Again, there are some and hoops to jump through to get it to work. You can follow the instructions here:
+
+https://wiki.eclipse.org/CDT/User/FAQ#How_do_I_install_the_LLDB_debugger_integration.3F
 
 If you really need a debugger, and don't want to bother with this setup, consider using [XCode](XCode.md)
-
-```
-gdb requires special privileges to access Mach ports.
-You will need to codesign the binary. For instructions, see:
-
-  https://sourceware.org/gdb/wiki/BuildingOnDarwin
-
-On 10.12 (Sierra) or later with SIP, you need to run this:
-
-  echo "set startup-with-shell off" >> ~/.gdbinit
-```
