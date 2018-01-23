@@ -42,7 +42,7 @@ If you wish to uninstall this version of OpenCV, you can run `make uninstall`, o
 
 # Using OpenCV & CMake (Configuration Required)
 
-[Click here for Eclipse Instructions](CMake.md)
+[Click here for CMake Instructions](CMake.md)
 
 # Using OpenCV & Eclipse (Configuration Required)
 
