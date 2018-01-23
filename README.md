@@ -1,36 +1,37 @@
 # Installing OpenCV with the extra modules
 
-1. Install homebrew from brew.sh
-2. Install Xcode and the developer tools
-3. Install cmake from brew using `brew install cmake`
-4. Download the opencv source, and the corresponding version of the opencv_contrib source zip release from the OpenCV git release
+If all you need is the release version of OpenCV, you can install it via Homebrew. It comes by default with the extra and Non-free modules. CMake and pkg-config are useful to have either way.
+
+1. Install homebrew from https://brew.sh
+2. Install Xcode from the app store, or the developer tools via the command line: `xcode-select --install`
+3. Accept the Xcode license agreement: `sudo xcodebuild -license accept`
+4. Install cmake, pkg-config, and opencv from brew using `brew install cmake pkg-config opencv`
+
+Then, all you need to do is follow the OpenCV include instructions for your favourite IDE. Or, skip to the instructions for `Using OpenCV & CMake` below. 
+
+# Installing the Debug version of OpenCV (Optional)
+
+If you need to modify OpenCV for whatever reason, or would like extra debugging symbols, follow these instructions.
+
+1. Install the Release version of OpenCV from the instructions above.
+
+2. Download the opencv source, and the corresponding version of the opencv_contrib source zip release from the OpenCV git release
 
 https://github.com/opencv/opencv/archive/3.4.0.zip
 
 https://github.com/opencv/opencv_contrib/archive/3.4.0.zip
 
-5. Extract both zip files to their individual directories
-6. Change to the regular opencv directory
+3. Extract both zip files to their individual directories
+4. Change to the regular opencv directory
+5. Make a `build` directory using `mkdir build-debug`
+6. Change to the build-debug directory, and run the following command to prepare the OpenCV build. Change the extra modules path to the appropriate `modules` directory from the opencv_contrib directory
 
-## Building the release version of OpenCV
+   `cmake -DCMAKE_INSTALL_PREFIX=/usr/local/opencv_debug -DCMAKE_BUILD_TYPE=Debug -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-3.4.0/modules -DOPENCV_ENABLE_NONFREE=true ..`
 
-1. Make a `build` directory using `mkdir build`
-2. Change to the build directory, and run the following command to build OpenCV. Change the extra modules path to the appropriate `modules` directory from the opencv_contrib directory
+7. Run `make -j4`, where 4 is the number of logical cores in your machine.
+8. Once completed, if successful, run `make install`
 
-   `cmake -DCMAKE_BUILD_TYPE=Release -DOPENCV_EXTRA_MODULES_PATH=../path/to/opencv_contrib-3.4.0/modules -DOPENCV_ENABLE_NONFREE=true ..`
-
-3. Run `make -j4`, where 4 is the number of logical cores in your machine.
-4. Once completed, if successful, run `make install`
-
-## Building the debug version of OpenCV (Optional)
-
-1. Make a `build` directory using `mkdir build-debug`
-2. Change to the build-debug directory, and run the following command to build OpenCV. Change the extra modules path to the appropriate `modules` directory from the opencv_contrib directory
-
-   `cmake -DCMAKE_INSTALL_PREFIX=/usr/local/opencv_debug -DCMAKE_BUILD_TYPE=Debug -DOPENCV_EXTRA_MODULES_PATH=../path/to/opencv_contrib-3.4.0/modules -DOPENCV_ENABLE_NONFREE=true ..`
-
-3. Run `make -j4`, where 4 is the number of logical cores in your machine.
-4. Once completed, if successful, run `make install`
+If you wish to uninstall this version of OpenCV, you can run `make uninstall`, or `rm -rf /usr/local/opencv_debug`
 
 # Using OpenCV & CMake (Easy)
 
