@@ -13,7 +13,9 @@ https://github.com/opencv/opencv_contrib/archive/3.4.0.zip
 6. Change to the regular opencv directory
 7. Make a `build` directory using `mkdir build`
 8. Change to the build directory, and run the following command to build OpenCV. Change the extra modules path to the appropriate `modules` directory from the opencv_contrib directory
-   `cmake -DOPENCV_EXTRA_MODULES_PATH=../path/to/opencv_contrib-3.4.0/modules ..`
+
+   `cmake -DOPENCV_EXTRA_MODULES_PATH=../path/to/opencv_contrib-3.4.0/modules -DOPENCV_ENABLE_NONFREE=true ..`
+
 9. Run `make -j4`, where 4 is the number of logical cores in your machine.
 10. Once completed, if successful, run `make install`
 
