@@ -40,30 +40,13 @@ If you wish to uninstall this version of OpenCV, you can run `make uninstall`, o
 3. Run `cmake .` to prepare the directory
 4. Run `make` to build the executable. It will be called `lab`
 
-# Using OpenCV & CMake (Custom, but easy)
+# Using OpenCV & CMake (Configuration Required)
 
-1. Create a directory to contain your code.
-2. Create a file called CMakeLists.txt, and copy the lines below in to it.
-
-```
-cmake_minimum_required(VERSION 2.8)
-project( imshow )
-find_package( OpenCV REQUIRED )
-include_directories( ${OpenCV_INCLUDE_DIRS} )
-add_executable( imshow imshow.cpp )
-target_link_libraries( imshow ${OpenCV_LIBS} )
-```
-
-3. Replace `imshow` in `project( imshow )` with a name of your choice.
-4. Replace the first `imshow` in  `add_executable( imshow imshow.cpp )` with a name of your choice. This will become the executable file.
-5. Replace `imshow.cpp` with the name of your source file(s)
-6. Run `cmake .` to prepare the make file. If you add or remove source files, re-run this command.
-7. Run `make` to build your project.
-
+[Click here for Eclipse Instructions](CMake.md)
 
 # Using OpenCV & Eclipse (Configuration Required)
 
-[Click here for Eclipse Instructions](../master/ECLIPSE.md)
+[Click here for Eclipse Instructions](ECLIPSE.md)
 
 # Using OpenCV & Xcode (Configuration Required)
 
