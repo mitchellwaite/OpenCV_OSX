@@ -51,11 +51,11 @@ You'll need to place any resource files in that directory to be able to access t
 
 # Getting the debugger to work
 
-Eclipse C++ uses GDB as the default debugger. System Integrity Protection, a security feature in 10.12 Sierra and later, breaks it by default.
+Eclipse C++ uses GDB as the default debugger. System Integrity Protection, a security feature in 10.12 Sierra and later, *breaks it by default*.
 
 To install it, run `brew install gdb`. Make sure to follow the instructions below to install and set it up correctly.
 
-If you really need a debugger, and don't want to bother with this crap, use [XCode](../blob/master/XCode.md)
+If you really need a debugger, and don't want to bother with this setup, consider using [XCode](XCode.md)
 
 ```
 gdb requires special privileges to access Mach ports.
