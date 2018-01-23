@@ -63,8 +63,8 @@ target_link_libraries( imshow ${OpenCV_LIBS} )
 
 # Using OpenCV & Eclipse (Configuration Required)
 
-[Click here for Eclipse Instructions](../blob/master/ECLIPSE.md)
+[Click here for Eclipse Instructions](../master/ECLIPSE.md)
 
 # Using OpenCV & Xcode (Configuration Required)
 
-[Click here for XCode Instructions](../blob/master/XCode.md)
+[Click here for XCode Instructions](XCode.md)
